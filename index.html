@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Insurance Calculator</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>Insurance Calculator</h1>
+        </header>
+
+        <main>
+            <!-- Initial Amount Input -->
+            <div class="input-section">
+                <label for="initialAmount">Initial Amount ($)</label>
+                <input type="number" id="initialAmount" placeholder="Enter initial amount" step="0.01" min="0">
+            </div>
+
+            <!-- Mode Toggle -->
+            <div class="mode-toggle">
+                <label class="toggle-label">
+                    <input type="radio" name="calculationMode" value="manual" id="manualMode" checked>
+                    <span>Manual Calculation</span>
+                </label>
+                <label class="toggle-label">
+                    <input type="radio" name="calculationMode" value="ai" id="aiMode">
+                    <span>AI Calculation</span>
+                </label>
+            </div>
+
+            <!-- Manual Mode Inputs -->
+            <div id="manualInputs" class="mode-inputs">
+                <h3>Manual Calculation</h3>
+                <div class="input-row">
+                    <div class="input-group">
+                        <label for="percentageInput">Insurance Coverage (%)</label>
+                        <input type="number" id="percentageInput" placeholder="Enter percentage" min="0" max="100" step="0.01">
+                        <small>Enter percentage without % symbol</small>
+                    </div>
+                    <div class="input-group">
+                        <label for="amountInput">Insurance Coverage ($)</label>
+                        <input type="number" id="amountInput" placeholder="Enter dollar amount" min="0" step="0.01">
+                        <small>Enter dollar amount insurance will pay</small>
+                    </div>
+                </div>
+            </div>
+
+            <!-- AI Mode Inputs -->
+            <div id="aiInputs" class="mode-inputs hidden">
+                <h3>AI-Powered Calculation</h3>
+                <div class="input-group">
+                    <label for="apiKey">Google API Key (Optional)</label>
+                    <input type="password" id="apiKey" placeholder="Enter your Gemini API key">
+                    <small>Required only for AI calculations</small>
+                </div>
+                <div class="input-group">
+                    <label for="naturalLanguageInput">Insurance Terms</label>
+                    <textarea id="naturalLanguageInput" placeholder='Enter insurance terms in natural language&#10;Example: "80% coverage up to $1000, then 60% coverage"&#10;Example: "$20 copay and 20% off the rest"'></textarea>
+                    <small>Describe your insurance coverage in plain English</small>
+                </div>
+            </div>
+
+            <!-- Calculate Button -->
+            <button id="calculateBtn" class="calculate-btn">Calculate</button>
+
+            <!-- Error Message -->
+            <div id="errorMessage" class="error-message hidden"></div>
+
+            <!-- Results Display -->
+            <div id="resultsSection" class="results-section hidden">
+                <h3>Calculation Results</h3>
+                <div class="results-row">
+                    <div class="result-box">
+                        <label>Amount Insurance Pays</label>
+                        <div id="insuranceAmount" class="result-value">$0.00</div>
+                    </div>
+                    <div class="result-box">
+                        <label>Amount Patient Pays</label>
+                        <div id="patientAmount" class="result-value">$0.00</div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- History Section -->
+            <div id="historySection" class="history-section">
+                <div class="history-header">
+                    <h3>Calculation History</h3>
+                    <button id="clearHistoryBtn" class="clear-history-btn">Clear All History</button>
+                </div>
+                <div id="historyList" class="history-list">
+                    <p class="no-history">No calculations yet</p>
+                </div>
+            </div>
+        </main>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html> 
