@@ -54,6 +54,13 @@
                 <div class="input-group">
                     <label for="apiKey">Google API Key (Optional)</label>
                     <input type="password" id="apiKey" placeholder="Enter your Gemini API key">
+                    <div class="api-key-controls">
+                        <label class="checkbox-label">
+                            <input type="checkbox" id="rememberApiKey">
+                            <span>Remember API key (stored securely in browser)</span>
+                        </label>
+                        <button type="button" id="clearApiKeyBtn" class="clear-api-key-btn">Clear Stored Key</button>
+                    </div>
                     <small>Required only for AI calculations</small>
                 </div>
                 <div class="input-group">
@@ -81,6 +88,20 @@
                         <label>Amount Patient Pays</label>
                         <div id="patientAmount" class="result-value">$0.00</div>
                     </div>
+                </div>
+                
+                <!-- Explanation Section -->
+                <div id="explanationSection" class="explanation-section hidden">
+                    <h4>How This Was Calculated</h4>
+                    <div id="explanationText" class="explanation-text"></div>
+                </div>
+                
+                <!-- View Code Section (AI Only) -->
+                <div id="viewCodeSection" class="view-code-section hidden">
+                    <button id="viewCodeBtn" class="view-code-btn" onclick="viewGeneratedCode()">
+                        <span>🔍 View AI Generated Code</span>
+                        <small>See the JavaScript code that calculated this result</small>
+                    </button>
                 </div>
             </div>
 

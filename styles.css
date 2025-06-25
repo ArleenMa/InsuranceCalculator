@@ -163,6 +163,55 @@ header h1 {
     font-size: 0.875rem;
 }
 
+/* API Key Controls */
+.api-key-controls {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 8px;
+    margin-bottom: 5px;
+    padding: 8px;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+    border: 1px solid #e9ecef;
+}
+
+.checkbox-label {
+    display: flex;
+    align-items: center;
+    cursor: pointer;
+    font-size: 14px;
+    color: #495057;
+    margin: 0;
+}
+
+.checkbox-label input[type="checkbox"] {
+    margin-right: 8px;
+    width: auto;
+    padding: 0;
+    cursor: pointer;
+}
+
+.checkbox-label span {
+    font-weight: 500;
+}
+
+.clear-api-key-btn {
+    padding: 6px 12px;
+    background-color: #6c757d;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    font-size: 12px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+    font-weight: 500;
+}
+
+.clear-api-key-btn:hover {
+    background-color: #5a6268;
+}
+
 /* Calculate Button */
 .calculate-btn {
     width: 100%;
@@ -249,6 +298,63 @@ header h1 {
     color: #28a745;
 }
 
+/* Explanation Section */
+.explanation-section {
+    margin-top: 20px;
+    padding: 15px;
+    background-color: #f8f9fa;
+    border-radius: 6px;
+    border-left: 4px solid #007bff;
+}
+
+.explanation-section h4 {
+    margin-bottom: 10px;
+    color: #495057;
+    font-size: 1.1rem;
+    font-weight: 600;
+}
+
+.explanation-text {
+    color: #6c757d;
+    line-height: 1.6;
+    font-size: 0.95rem;
+    white-space: pre-wrap;
+}
+
+/* View Code Section */
+.view-code-section {
+    margin-top: 15px;
+    text-align: center;
+}
+
+.view-code-btn {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    border: none;
+    padding: 12px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+    display: inline-flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 4px;
+    box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+}
+
+.view-code-btn:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 4px 15px rgba(102, 126, 234, 0.4);
+}
+
+.view-code-btn small {
+    font-size: 11px;
+    opacity: 0.9;
+    font-weight: 400;
+}
+
 /* History Section */
 .history-section {
     margin-top: 30px;
@@ -319,6 +425,26 @@ header h1 {
     color: #6c757d;
 }
 
+.calculation-type {
+    font-size: 12px;
+    color: #007bff;
+    font-weight: 500;
+    margin-left: 8px;
+}
+
+.history-explanation {
+    margin-top: 8px;
+    padding: 8px;
+    background-color: #f8f9fa;
+    border-radius: 4px;
+    font-size: 12px;
+    color: #6c757d;
+    line-height: 1.4;
+    max-height: 100px;
+    overflow-y: auto;
+    border-left: 3px solid #007bff;
+}
+
 .delete-history-btn {
     padding: 5px 10px;
     background-color: #dc3545;
@@ -378,5 +504,15 @@ header h1 {
     
     .history-details {
         justify-content: space-between;
+    }
+    
+    .api-key-controls {
+        flex-direction: column;
+        gap: 8px;
+        align-items: stretch;
+    }
+    
+    .checkbox-label {
+        text-align: center;
     }
 } 
